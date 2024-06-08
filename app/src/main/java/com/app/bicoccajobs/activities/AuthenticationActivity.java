@@ -22,7 +22,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 //Sign up screen..
-//
 public class AuthenticationActivity extends BaseActivity {
     EditText edtEmail, edtPassword, edtConfirmPassword;
     Button btnRegister, btnLogRegister;
