@@ -24,7 +24,7 @@
     <string name="reset">"Email per reset password inviata"</string>
     <string name="signing">"Accedendo..."</string>
     <string name="incorrect_details">"Informazioni errate"</string>
-    <string name="sign_in_succesful">Iscrizione effettuata</string>
+    <string name="sign_in_succesful">Accesso effettuato</string>
 
     <string name="select_image">Seleziona l immagine</string>
     <string name="update_succesfully">Aggiornamento effettuato</string>
