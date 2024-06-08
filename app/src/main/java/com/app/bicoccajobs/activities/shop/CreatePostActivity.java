@@ -128,7 +128,7 @@ public class CreatePostActivity extends AppCompatActivity{
                             Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
                             startActivityForResult(intent, CAMERA_REQUEST_CODE);
                         }*/
-                        if(i==1) {
+                        if(i==0) {
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                                 if (!mGranted) {
                                     if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
@@ -144,7 +144,7 @@ public class CreatePostActivity extends AppCompatActivity{
                             startActivityForResult(intent, PICK_IMAGE);
 
                         }
-                        if(i == 2){
+                        if(i == 1){
                             alertDialog.dismiss();
                         }
                     }
@@ -161,16 +161,16 @@ public class CreatePostActivity extends AppCompatActivity{
                 Desc = edtDescription.getText().toString().trim();
 
                 if(urlList.size()<1){
-                    Toast.makeText(CreatePostActivity.this, "Select plant pic!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CreatePostActivity.this, R.string.toast_info, Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if(TextUtils.isEmpty(Title)){
-                    edtTitle.setError("Required!");
+                    edtTitle.setError(getString(R.string.missing_title));
                     edtTitle.requestFocus();
                     return;
                 }
                 if(TextUtils.isEmpty(Desc)){
-                    edtDescription.setError("Required!");
+                    edtDescription.setError(getString(R.string.missing_des));
                     edtDescription.requestFocus();
                     return;
                 }
@@ -180,7 +180,7 @@ public class CreatePostActivity extends AppCompatActivity{
                 model = new PostModelClass(id,urlList,Title,Desc,ShopActivity.userId,ShopActivity.fullName,ShopActivity.pic,ShopActivity.email,ShopActivity.address,"");
                 databaseReference.child(id).setValue(model);
 
-                Toast.makeText(CreatePostActivity.this, "Post uploaded", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CreatePostActivity.this, R.string.toast_upload, Toast.LENGTH_SHORT).show();
 
                 edtTitle.setText("");
                 edtDescription.setText("");
@@ -200,7 +200,7 @@ public class CreatePostActivity extends AppCompatActivity{
 
         if (requestCode == STORAGE_PERMISSION_CODE && grantResults.length > 0) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(getApplicationContext(), "Permission Granted", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), R.string.toast_storage, Toast.LENGTH_SHORT).show();
                 mGranted = true;
 
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
@@ -258,7 +258,7 @@ public class CreatePostActivity extends AppCompatActivity{
     public void showProgressDialog() {
         if (mProgressDialog == null) {
             mProgressDialog = new ProgressDialog(this);
-            mProgressDialog.setMessage("Uploading data please wait...");
+            mProgressDialog.setMessage(getString(R.string.waiting_data));
             mProgressDialog.setIndeterminate(true);
             mProgressDialog.setCanceledOnTouchOutside(false);
         }

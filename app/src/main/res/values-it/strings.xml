@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">BicoccaJobs</string>
     <string name="shop">Attività: </string>
     <string name="library">SCEGLI DALLA LIBRERIA</string>
     <string name="cancel">ANNULLA</string>
     <string name="select">Seleziona</string>
+    <string name="toast_info">Riempi tutti i campi</string>
+    <string name="missing_title">Inserisci il titolo!</string>
+    <string name="missing_des">Inserisci la descrizione!</string>
+    <string name="toast_upload">Post inserito!</string>
+    <string name="toast_storage">Permesso concesso!</string>
+    <string name="waiting_data">Caricamento dati, attendere... </string>
 
 </resources>

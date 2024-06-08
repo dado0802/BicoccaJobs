@@ -1,8 +1,15 @@
 <resources>
+
     <string name="app_name" translatable="false">BicoccaJobs</string>
     <string name="shop">shop: </string>
     <string name="library">CHOOSE FROM LIBRARY</string>
     <string name="cancel">CANCEL</string>
     <string name="select">Select</string>
+    <string name="toast_info">Fill all the fields</string>
+    <string name="missing_title">Title required!</string>
+    <string name="missing_des">Description required!</string>
+    <string name="toast_upload">Post uploaded!</string>
+    <string name="toast_storage">Permission granted!</string>
+    <string name="waiting_data">Uploading data please wait...</string>
 
 </resources>
