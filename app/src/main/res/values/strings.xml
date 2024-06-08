@@ -12,4 +12,10 @@
     <string name="toast_storage">Permission granted!</string>
     <string name="waiting_data">Uploading data please wait...</string>
 
+    <string name="confirm">Confirmation?</string>
+    <string name="sign_out_conf">Are you sure to sign out?</string>
+    <string name="prepearing">Prepearing app functions...</string>
+    <string name="account_not_complete">Account not completed!</string>
+    <string name="account_not_complete_popup">Please complete your account from profile screen.</string>
+
 </resources>

@@ -13,4 +13,10 @@
     <string name="toast_storage">Permesso concesso!</string>
     <string name="waiting_data">Caricamento dati, attendere... </string>
 
+    <string name="confirm">Confermi?</string>
+    <string name="sign_out_conf">Sicuro di voler uscire?</string>
+    <string name="prepearing">Preparo l applicazione...</string>
+    <string name="account_not_complete">Account non compleatato!</string>
+    <string name="account_not_complete_popup">Si prega di completare l account dalla pagina del profilo</string>
+
 </resources>

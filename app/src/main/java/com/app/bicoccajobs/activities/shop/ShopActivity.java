@@ -96,8 +96,8 @@ public class ShopActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(ShopActivity.this);
-                builder.setTitle("Confirmation?");
-                builder.setMessage("Are you sure to sign out?").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                builder.setTitle(R.string.confirm);
+                builder.setMessage(R.string.sign_out_conf).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         editor.clear();
@@ -123,7 +123,7 @@ public class ShopActivity extends BaseActivity {
     //Getting current logged in driver data from firebase realtime database.
     private void loadUserData() {
 
-        showProgressDialog("Preparing app functions..");
+        showProgressDialog(getString(R.string.prepearing));
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -141,10 +141,10 @@ public class ShopActivity extends BaseActivity {
 
                 //Check if current logged in user complete his/her account by providing all the required data in profile screen or not.
                 if(fullName.equals("")){
-                    tvName.setText("Account not completed");
+                    tvName.setText(R.string.account_not_complete);
                     AlertDialog.Builder builder = new AlertDialog.Builder(ShopActivity.this);
                     builder.setTitle("Alert!");
-                    builder.setMessage("Please complete your account from profile screen.").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    builder.setMessage(getString(R.string.account_not_complete_popup)).setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.dismiss();
