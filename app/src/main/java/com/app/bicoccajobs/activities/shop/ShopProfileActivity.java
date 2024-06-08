@@ -151,7 +151,7 @@ public class ShopProfileActivity extends BaseActivity {
                 Intent intent = new Intent();
                 intent.setType("image/*");
                 intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent, "Select Image"), PICK_FILE_REQUEST);
+                startActivityForResult(Intent.createChooser(intent, getString(R.string.select_image)), PICK_FILE_REQUEST);
             }
         });
 
@@ -165,17 +165,17 @@ public class ShopProfileActivity extends BaseActivity {
 
                 //Validations to all data fileds..
                 if(TextUtils.isEmpty(userName)){
-                    edtName.setError("Required!");
+                    edtName.setError(getString(R.string.required));
                     edtName.requestFocus();
                     return;
                 }
                 if(TextUtils.isEmpty(userPhone)){
-                    edtPhone.setError("Required!");
+                    edtPhone.setError(getString(R.string.required));
                     edtPhone.requestFocus();
                     return;
                 }
                 if(TextUtils.isEmpty(address)){
-                    edtAddress.setError("Required!");
+                    edtAddress.setError(getString(R.string.required));
                     edtAddress.requestFocus();
                     return;
                 }
@@ -194,7 +194,7 @@ public class ShopProfileActivity extends BaseActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(getApplicationContext(), "Password reset email sent successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), R.string.reset, Toast.LENGTH_SHORT).show();
                         }else {
                             Toast.makeText(getApplicationContext(), "Error : "+task.getException(), Toast.LENGTH_SHORT).show();
                         }
@@ -213,7 +213,7 @@ public class ShopProfileActivity extends BaseActivity {
         edtAddress.setEnabled(false);
         editPassword.setEnabled(false);
 
-        Toast.makeText(this, "Updated successfully", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.update_succesfully, Toast.LENGTH_SHORT).show();
 
     }
 
@@ -224,14 +224,14 @@ public class ShopProfileActivity extends BaseActivity {
 
         if (requestCode == STORAGE_PERMISSION_CODE && grantResults.length > 0) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(getApplicationContext(), "Permission Granted", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), R.string.toast_storage, Toast.LENGTH_SHORT).show();
                 mGranted = true;
                 Intent intent = new Intent();
                 intent.setType("image/*");
                 intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent, "Select Image"), PICK_FILE_REQUEST);
+                startActivityForResult(Intent.createChooser(intent, getString(R.string.select_image)), PICK_FILE_REQUEST);
             } else {
-                Toast.makeText(getApplicationContext(), "Permission Denied", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), R.string.permission_denied, Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -266,7 +266,7 @@ public class ShopProfileActivity extends BaseActivity {
     //This function update user profile pic and store it to firebase storage..
     private void updatePic() {
         if(fileUri !=null){
-            showProgressDialog("Uploading Picture..");
+            showProgressDialog(getString(R.string.uploading_picture));
             final StorageReference fileref = mStorageRef.child(System.currentTimeMillis() + "." + getExtension(fileUri));
             mUploadTask =   fileref.putFile(fileUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
@@ -279,7 +279,7 @@ public class ShopProfileActivity extends BaseActivity {
                             hideProgressDialog();
                             try {
                                 databaseReference.child(userId).child("pic").setValue(uri.toString());
-                                Toast.makeText(ShopProfileActivity.this, "Picture updated", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ShopProfileActivity.this, R.string.updated_picture, Toast.LENGTH_SHORT).show();
                                 fileUri = Uri.EMPTY;
                             } catch (Exception ex ){
                                 Toast.makeText(getApplicationContext()  , "Error : " + ex.toString() , Toast.LENGTH_LONG).show();
@@ -308,9 +308,9 @@ public class ShopProfileActivity extends BaseActivity {
         super.onStart();
 
         if(!checkEmailIsVerified()){
-            tvEmailStatus.setText("Email not Verified, CLick to verify");
+            tvEmailStatus.setText(R.string.email_not_verify);
         }else {
-            tvEmailStatus.setText("Email Verified");
+            tvEmailStatus.setText(R.string.email_verify);
         }
     }
 
@@ -332,7 +332,7 @@ public class ShopProfileActivity extends BaseActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
-                    Toast.makeText(getApplicationContext(), "Verification email sent", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.email_sent, Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
                 }

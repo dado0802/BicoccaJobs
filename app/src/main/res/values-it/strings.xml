@@ -19,4 +19,20 @@
     <string name="account_not_complete">Account non compleatato!</string>
     <string name="account_not_complete_popup">Si prega di completare l account dalla pagina del profilo</string>
 
+    <string name="network_check">Controlla la tua rete!</string>
+    <string name="required">Richiesta</string>
+    <string name="reset">"Email per reset password inviata"</string>
+    <string name="signing">"Accedendo..."</string>
+    <string name="incorrect_details">"Informazioni errate"</string>
+    <string name="sign_in_succesful">Iscrizione effettuata</string>
+
+    <string name="select_image">Seleziona l immagine</string>
+    <string name="update_succesfully">Aggiornamento effettuato</string>
+    <string name="permission_denied">Permesso Rifiutato</string>
+    <string name="uploading_picture">Caricamento Immagine...</string>
+    <string name="updated_picture">Immagine Caricata...</string>
+    <string name="email_not_verify">Email non Verificata, Clicca per verificare</string>
+    <string name="email_verify">Email Verificata</string>
+    <string name="email_sent">Email di Verifica Inviata</string>
+
 </resources>

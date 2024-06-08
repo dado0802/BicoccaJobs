@@ -18,4 +18,20 @@
     <string name="account_not_complete">Account not completed!</string>
     <string name="account_not_complete_popup">Please complete your account from profile screen.</string>
 
+    <string name="network_check">Check your network!</string>
+    <string name="required">Required</string>
+    <string name="reset">Password reset email sent successfully</string>
+    <string name="signing">Singing in...</string>
+    <string name="incorrect_details">Incorrect details</string>
+    <string name="sign_in_succesful">Sign in successful</string>
+
+    <string name="select_image">Select image</string>
+    <string name="update_succesfully">Update succesfully</string>
+    <string name="permission_denied">Permission Denied</string>
+    <string name="uploading_picture">Uploading Picture...</string>
+    <string name="updated_picture">Updated Picture...</string>
+    <string name="email_not_verify">Email not Verified, Click to Verify</string>
+    <string name="email_verify">Email Verified</string>
+    <string name="email_sent">Verification email sent</string>
+
 </resources>
