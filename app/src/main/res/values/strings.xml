@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">BicoccaJobs</string>
+    <string name="app_name" translatable="false">BicoccaJobs</string>
+    <string name="shop">shop: </string>
+    <string name="library">CHOOSE FROM LIBRARY</string>
+    <string name="cancel">CANCEL</string>
+    <string name="select">Select</string>
 
 </resources>

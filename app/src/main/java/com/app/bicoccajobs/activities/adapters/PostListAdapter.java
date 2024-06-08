@@ -41,7 +41,7 @@ public class PostListAdapter extends RecyclerView.Adapter<PostListAdapter.ImageV
 
      Picasso.with(mcontext).load(uploadCurrent.getUrlList().get(0)).placeholder(R.drawable.holder).into(holder.imgPic);
      holder.tvPlantName.setText(uploadCurrent.getTitle());
-     holder.tvPlantOwner.setText("Shop: "+uploadCurrent.getUserName());
+     holder.tvPlantOwner.setText(R.string.shop +uploadCurrent.getUserName());
 
      holder.itemView.setOnClickListener(new View.OnClickListener() {
          @Override

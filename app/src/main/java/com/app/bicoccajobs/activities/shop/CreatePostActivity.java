@@ -105,17 +105,17 @@ public class CreatePostActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 CharSequence arr[] = new CharSequence[]{
-                        "TAKE A PHOTO",
-                        "CHOOSE FROM LIBRARY",
-                        "CANCEL"
+                        //"TAKE A PHOTO",
+                        getString(R.string.library),
+                        getString(R.string.cancel)
                 };
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(CreatePostActivity.this);
-                builder.setTitle("Select");
+                builder.setTitle(R.string.select);
                 builder.setItems(arr, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        if(i==0){
+                        /*if(i==0){
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                                 if (!flag) {
                                     if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
@@ -127,7 +127,7 @@ public class CreatePostActivity extends AppCompatActivity{
 
                             Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
                             startActivityForResult(intent, CAMERA_REQUEST_CODE);
-                        }
+                        }*/
                         if(i==1) {
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                                 if (!mGranted) {

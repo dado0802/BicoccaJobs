@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BicoccaJobs</string>
+    <string name="shop">Attività: </string>
+    <string name="library">SCEGLI DALLA LIBRERIA</string>
+    <string name="cancel">ANNULLA</string>
+    <string name="select">Seleziona</string>
+
+</resources>
