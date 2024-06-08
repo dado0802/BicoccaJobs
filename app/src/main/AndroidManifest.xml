@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.app.bicoccajobs">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DharuraApp">
+
+        <activity android:name=".activities.shop.ViewAllPostsActivity"/>
+        <activity android:name="com.app.bicoccajobs.activities.student.PostDetailsActivity"/>
+        <activity android:name="com.app.bicoccajobs.activities.shop.ViewMyPostsActivity"/>
+        <activity android:name="com.app.bicoccajobs.activities.student.ViewJobPostsActivity"/>
+        <activity android:name="com.app.bicoccajobs.activities.shop.PostSuccessActivity"/>
+        <activity android:name="com.app.bicoccajobs.activities.shop.CreatePostActivity"/>
+        <activity android:name="com.app.bicoccajobs.activities.student.StudentActivity"/>
+        <activity android:name="com.app.bicoccajobs.activities.shop.ShopActivity"/>
+        <activity android:name="com.app.bicoccajobs.activities.RegistrationActivity"/>
+        <activity android:name="com.app.bicoccajobs.activities.VerificationActivity"/>
+        <activity android:name="com.app.bicoccajobs.activities.AuthenticationActivity"/>
+        <activity android:name="com.app.bicoccajobs.activities.student.StudentLoginActivity"/>
+        <activity android:name="com.app.bicoccajobs.activities.SelectionActivity"/>
+        <activity android:name="com.app.bicoccajobs.activities.student.StudentProfileActivity"/>
+        <activity android:name="com.app.bicoccajobs.activities.shop.ShopProfileActivity"/>
+        <activity android:name="com.app.bicoccajobs.activities.shop.ShopLoginActivity"/>
+
+        <activity
+            android:name="com.app.bicoccajobs.activities.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

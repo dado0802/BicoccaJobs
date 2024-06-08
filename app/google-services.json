@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "721615859703",
+    "firebase_url": "https://bicoccajobs-8dafb-default-rtdb.firebaseio.com",
+    "project_id": "bicoccajobs-8dafb",
+    "storage_bucket": "bicoccajobs-8dafb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:721615859703:android:759984c3314d0c2dee88f2",
+        "android_client_info": {
+          "package_name": "com.app.bicoccajobs"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUQPt5vRXi6go1ETkf8Jd5Fm6k4gfXg8g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
