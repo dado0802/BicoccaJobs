@@ -74,5 +74,12 @@
     <string name="view_all_posts">View All Posts</string>
     <string name="profile">Profile</string>
     <string name="sign_out">Sign Out</string>
+    <string name="edit_details">Edit Your Profile Details</string>
+    <string name="update_details">UPDATE DETAILS</string>
+    <string name="update_password">UPDATE PASSWORD</string>
+    <string name="view_job_posts">View Job Posts</string>
+    <string name="please_verify">Please verify email and then click next</string>
+    <string name="next">Next</string>
+    <string name="resend">Resend</string>
 
 </resources>

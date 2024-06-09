@@ -75,5 +75,12 @@
     <string name="view_all_posts">Vedi Tutti I Post</string>
     <string name="profile">Profilo</string>
     <string name="sign_out">Esci</string>
+    <string name="edit_details">Modifica I Dati Del Tuo Profilo</string>
+    <string name="update_details">AGGIORNA DATI</string>
+    <string name="update_password">AGGIORNA PASSWORD</string>
+    <string name="view_job_posts">Vedi Post Di Lavoro</string>
+    <string name="please_verify">Si prega di verificare l email e poi premere avanti</string>
+    <string name="next">AVANTI</string>
+    <string name="resend">Invia Di Nuovo</string>
 
 </resources>
