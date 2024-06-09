@@ -59,5 +59,11 @@
     <string name="add_photo">AGGIUNGI FOTO</string>
     <string name="short_description">Breve Descrizione</string>
     <string name="add_post">AGGIUNGI POST</string>
+    <string name="forgot_password">Password Dimenticata?</string>
+    <string name="address">Indirizzo</string>
+    <string name="candidate_email">Candida Email</string>
+    <string name="post_added_succesfully">Post Aggiunto Correttamente</string>
+    <string name="add_another">AGGIUNGI UN ALTRO</string>
+    <string name="go_to_homepage">TORNA ALLA HOMEPAGE</string>
 
 </resources>
