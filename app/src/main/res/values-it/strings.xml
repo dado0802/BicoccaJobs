@@ -35,4 +35,11 @@
     <string name="email_verify">Email Verificata</string>
     <string name="email_sent">Email di Verifica Inviata</string>
 
+    <string name="no_post_added">Nessun post aggiunto!</string>
+    <string name="title">Titolo: </string>
+    <string name="confirmation">Conferma</string>
+    <string name="delete">Sei sicuro di voler eliminare questo post?</string>
+    <string name="item_delete">Elemento eliminato</string>
+    <string name="loading_data">Caricamento dati..</string>
+
 </resources>

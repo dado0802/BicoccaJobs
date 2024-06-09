@@ -34,4 +34,11 @@
     <string name="email_verify">Email Verified</string>
     <string name="email_sent">Verification email sent</string>
 
+    <string name="no_post_added">No posts added!</string>
+    <string name="title">Title: </string>
+    <string name="confirmation">Confirmation</string>
+    <string name="delete">Are you sure to delete this post?</string>
+    <string name="item_delete">Item deleted</string>
+    <string name="loading_data">Loading data..</string>
+
 </resources>
