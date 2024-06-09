@@ -18,6 +18,7 @@ import androidx.core.content.ContextCompat;
 import com.app.bicoccajobs.R;
 import com.app.bicoccajobs.activities.BaseActivity;
 import com.app.bicoccajobs.activities.SelectionActivity;
+import com.app.bicoccajobs.activities.student.ViewJobPostsActivity;
 import com.app.bicoccajobs.models.ShopModelCLass;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -79,7 +80,7 @@ public class ShopActivity extends BaseActivity {
         btnViewALl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ViewAllPostsActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ViewJobPostsActivity.class);//ViewAllPostsActivity.class
                 startActivity(intent);
             }
         });
