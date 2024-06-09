@@ -53,6 +53,11 @@
     <string name="email_not_verify_2">Email not Verified</string>
 
     <string name="sign_in">SIGN IN</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="add_photo">ADD PHOTO</string>
+    <string name="short_description">Short Description</string>
+    <string name="add_post">ADD POST</string>
 
 
 </resources>
