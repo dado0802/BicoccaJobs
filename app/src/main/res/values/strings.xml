@@ -81,5 +81,7 @@
     <string name="please_verify">Please verify email and then click next</string>
     <string name="next">Next</string>
     <string name="resend">Resend</string>
+    <string name="all_job">Job Post</string>
+    <string name="my_post">My Post</string>
 
 </resources>

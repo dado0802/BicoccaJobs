@@ -67,7 +67,7 @@
     <string name="go_to_homepage">TORNA ALLA HOMEPAGE</string>
     <string name="full_name">Nome e Cognome</string>
     <string name="phone">Telefono</string>
-    <string name="select_your_choice">Effettua La Tua Scelta</string>
+    <string name="select_your_choice">Sei:</string>
     <string name="shop_2">Attività</string>
     <string name="loading">Caricamento..</string>
     <string name="add_job_post">Aggiungi Post di Lavoro</string>
@@ -82,5 +82,7 @@
     <string name="please_verify">Si prega di verificare l email e poi premere avanti</string>
     <string name="next">AVANTI</string>
     <string name="resend">Invia Di Nuovo</string>
+    <string name="all_job">Annunci Di Lavoro</string>
+    <string name="my_post">I Miei Post</string>
 
 </resources>

@@ -218,7 +218,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/login_btn_bg"
-                    android:text="@string/update_details"
+                    android:text="@string/update_password"
                     android:textColor="#fff"
                     android:textSize="16sp"
                     android:textStyle="bold" />

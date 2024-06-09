@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="All Jobs Posts"
+        android:text="@string/all_job"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold" />

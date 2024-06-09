@@ -72,12 +72,12 @@ public class StudentLoginActivity extends BaseActivity {
                 }
 
                 if(TextUtils.isEmpty(email)){
-                    edtEmail.setError("Required!");
+                    edtEmail.setError(getString(R.string.required));
                     edtEmail.requestFocus();
                     return;
                 }
                 if(TextUtils.isEmpty(passowrd)){
-                    editPassword.setError("Required!");
+                    editPassword.setError(getString(R.string.required));
                     editPassword.requestFocus();
                     return;
                 }
@@ -93,7 +93,7 @@ public class StudentLoginActivity extends BaseActivity {
                 //Forgot password email send code for reset password..
                 String email = edtEmail.getText().toString();
                 if(TextUtils.isEmpty(email)){
-                    edtEmail.setError("Required!");
+                    edtEmail.setError(getString(R.string.required));
                     edtEmail.requestFocus();
                     return;
                 }
@@ -101,7 +101,7 @@ public class StudentLoginActivity extends BaseActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(getApplicationContext(), "Password reset email sent successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), R.string.email_verify, Toast.LENGTH_SHORT).show();
                         }else {
                             Toast.makeText(getApplicationContext(), "Error : "+task.getException(), Toast.LENGTH_SHORT).show();
                         }
@@ -122,7 +122,7 @@ public class StudentLoginActivity extends BaseActivity {
 
     //Sign in function that checks user account credentials from firebase...
     private void signIn() {
-        showProgressDialog("Signing In..");
+        showProgressDialog(getString(R.string.signing));
         mAuth.signInWithEmailAndPassword(email, passowrd).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -131,7 +131,7 @@ public class StudentLoginActivity extends BaseActivity {
                     String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
                     checkUserType(userId);
                 } else {
-                    Toast.makeText(getApplicationContext(), "Incorrect details", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.incorrect_details, Toast.LENGTH_SHORT).show();
                     hideProgressDialog();
                 }
 
@@ -163,12 +163,12 @@ public class StudentLoginActivity extends BaseActivity {
                     databaseReference.child("password").setValue(passowrd);
                     Intent intent = new Intent(getApplicationContext(), StudentActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    Toast.makeText(StudentLoginActivity.this, "Sign in successful", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(StudentLoginActivity.this, R.string.sign_in_succesful, Toast.LENGTH_SHORT).show();
                     hideProgressDialog();
                     startActivity(intent);
                     finish();
                 }else {
-                    Toast.makeText(getApplicationContext(), "Incorrect details", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.incorrect_details, Toast.LENGTH_SHORT).show();
                     FirebaseAuth.getInstance().signOut();
                 }
                 hideProgressDialog();
