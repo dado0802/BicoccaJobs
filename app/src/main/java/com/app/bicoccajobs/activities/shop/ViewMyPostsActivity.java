@@ -78,7 +78,7 @@ public class ViewMyPostsActivity extends AppCompatActivity {
                     adapter = new EventsListAdapter(ViewMyPostsActivity.this, list);
                     recyclerView.setAdapter(adapter);
                 }else {
-                    textView.setText("No posts added!");
+                    textView.setText(R.string.no_post_added);
                 }
                 hideProgressDialog();
             }
@@ -111,7 +111,7 @@ public class ViewMyPostsActivity extends AppCompatActivity {
         public void onBindViewHolder(final ImageViewHolder holder, @SuppressLint("RecyclerView") final int position) {
 
             final PostModelClass post = muploadList.get(position);
-            holder.tvTitle.setText("Title: "+post.getTitle());
+            holder.tvTitle.setText(R.string.title +post.getTitle());
             holder.tvFoodSeller.setVisibility(View.GONE);
             Picasso.with(mcontext).load(post.getUrlList().get(0)).placeholder(R.drawable.holder).into(holder.imgPic);
 
@@ -121,14 +121,14 @@ public class ViewMyPostsActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(mcontext);
-                    builder.setTitle("Confirmation");
-                    builder.setMessage("Are you sure to delete this post?").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    builder.setTitle(R.string.confirmation);
+                    builder.setMessage(R.string.delete).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             databaseReference.child(post.getId()).removeValue();
                             list.remove(position);
                             notifyDataSetChanged();
-                            Toast.makeText(getApplicationContext(), "Item deleted", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), R.string.item_delete, Toast.LENGTH_SHORT).show();
                         }
                     }).setNegativeButton("No", new DialogInterface.OnClickListener() {
                         @Override
@@ -168,7 +168,7 @@ public class ViewMyPostsActivity extends AppCompatActivity {
     public void showProgressDialog() {
         if (mProgressDialog == null) {
             mProgressDialog = new ProgressDialog(ViewMyPostsActivity.this);
-            mProgressDialog.setMessage("Loading data..");
+            mProgressDialog.setMessage(getString(R.string.loading_data));
             mProgressDialog.setCanceledOnTouchOutside(false);
             mProgressDialog.setIndeterminate(true);
         }
