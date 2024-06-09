@@ -37,7 +37,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:text="Loading.."
+                        android:text="@string/loading"
                         android:textColor="#fff"
                         android:textSize="26sp"
                         android:textStyle="bold" />
@@ -83,7 +83,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="View Job Posts"
+                                    android:text="@string/view_job_posts"
                                     android:textSize="16sp"
                                     android:id="@+id/tvSub1"
                                     android:textColor="#000"
@@ -136,7 +136,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Profile"
+                                    android:text="@string/profile"
                                     android:textSize="16sp"
                                     android:id="@+id/tvSub3"
                                     android:textColor="#000"
@@ -180,7 +180,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Sign Out"
+                                    android:text="@string/sign_out"
                                     android:textSize="16sp"
                                     android:id="@+id/tvHist"
                                     android:textColor="#000"

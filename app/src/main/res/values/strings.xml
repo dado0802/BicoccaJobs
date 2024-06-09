@@ -58,6 +58,28 @@
     <string name="add_photo">ADD PHOTO</string>
     <string name="short_description">Short Description</string>
     <string name="add_post">ADD POST</string>
-
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="address">Address</string>
+    <string name="candidate_email">Candidate Email</string>
+    <string name="post_added_succesfully">Post Added Successfully</string>
+    <string name="add_another">ADD ANOTHER</string>
+    <string name="go_to_homepage">GO TO HOMEPAGE</string>
+    <string name="full_name">Full Name</string>
+    <string name="phone">Phone</string>
+    <string name="select_your_choice">Select Your Choice</string>
+    <string name="shop_2">Shop</string>
+    <string name="loading">Loading..</string>
+    <string name="add_job_post">Add Job Post</string>
+    <string name="view_my_posts">View My Posts</string>
+    <string name="view_all_posts">View All Posts</string>
+    <string name="profile">Profile</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="edit_details">Edit Your Profile Details</string>
+    <string name="update_details">UPDATE DETAILS</string>
+    <string name="update_password">UPDATE PASSWORD</string>
+    <string name="view_job_posts">View Job Posts</string>
+    <string name="please_verify">Please verify email and then click next</string>
+    <string name="next">Next</string>
+    <string name="resend">Resend</string>
 
 </resources>

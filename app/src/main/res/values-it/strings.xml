@@ -59,5 +59,28 @@
     <string name="add_photo">AGGIUNGI FOTO</string>
     <string name="short_description">Breve Descrizione</string>
     <string name="add_post">AGGIUNGI POST</string>
+    <string name="forgot_password">Password Dimenticata?</string>
+    <string name="address">Indirizzo</string>
+    <string name="candidate_email">Candida Email</string>
+    <string name="post_added_succesfully">Post Aggiunto Correttamente</string>
+    <string name="add_another">AGGIUNGI UN ALTRO</string>
+    <string name="go_to_homepage">TORNA ALLA HOMEPAGE</string>
+    <string name="full_name">Nome e Cognome</string>
+    <string name="phone">Telefono</string>
+    <string name="select_your_choice">Effettua La Tua Scelta</string>
+    <string name="shop_2">Attività</string>
+    <string name="loading">Caricamento..</string>
+    <string name="add_job_post">Aggiungi Post di Lavoro</string>
+    <string name="view_my_posts">Vedi I Miei Post</string>
+    <string name="view_all_posts">Vedi Tutti I Post</string>
+    <string name="profile">Profilo</string>
+    <string name="sign_out">Esci</string>
+    <string name="edit_details">Modifica I Dati Del Tuo Profilo</string>
+    <string name="update_details">AGGIORNA DATI</string>
+    <string name="update_password">AGGIORNA PASSWORD</string>
+    <string name="view_job_posts">Vedi Post Di Lavoro</string>
+    <string name="please_verify">Si prega di verificare l email e poi premere avanti</string>
+    <string name="next">AVANTI</string>
+    <string name="resend">Invia Di Nuovo</string>
 
 </resources>

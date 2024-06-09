@@ -38,7 +38,7 @@
                         android:layout_alignParentBottom="true"
                         android:layout_marginLeft="35dp"
                         android:layout_marginBottom="35dp"
-                        android:text="Select Your Choice"
+                        android:text="@string/select_your_choice"
                         android:textColor="#fff"
                         android:textSize="26sp"
                         android:textStyle="bold" />
@@ -83,7 +83,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Shop"
+                                    android:text="@string/shop_2"
                                     android:textSize="16sp"
                                     android:id="@+id/tvSub1"
                                     android:textColor="#000"
@@ -126,7 +126,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Student"
+                                    android:text="@string/students"
                                     android:textSize="16sp"
                                     android:layout_below="@+id/imgRenter"
                                     android:id="@+id/tvSub2"
