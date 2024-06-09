@@ -47,7 +47,7 @@
             android:background="@drawable/btn_top"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:text="SIGN IN"
+            android:text="@string/sign_in"
             android:textColor="#fff"
             android:textSize="18sp" />
 

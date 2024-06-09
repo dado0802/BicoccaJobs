@@ -52,4 +52,7 @@
 
     <string name="email_not_verify_2">Email not Verified</string>
 
+    <string name="sign_in">SIGN IN</string>
+
+
 </resources>

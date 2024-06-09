@@ -53,4 +53,6 @@
 
     <string name="email_not_verify_2">Email non Verificata</string>
 
+    <string name="sign_in">REGISTRATI</string>
+
 </resources>
