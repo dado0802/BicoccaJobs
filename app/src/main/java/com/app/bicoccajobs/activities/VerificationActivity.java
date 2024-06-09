@@ -45,7 +45,7 @@ public class VerificationActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(getApplicationContext(), "Verification email sent to " + firebaseUser.getEmail(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), R.string.email_sent + firebaseUser.getEmail(), Toast.LENGTH_LONG).show();
                         } else {
                             Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
                         }
@@ -66,11 +66,11 @@ public class VerificationActivity extends AppCompatActivity {
     private void SignInAndVerify(String email, String password) {
         if(checkEmailIsVerified()) {
             emailVerified = true;
-            Toast.makeText(getApplicationContext(), "Email Verified", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), R.string.email_verify, Toast.LENGTH_LONG).show();
             startActivity(new Intent(getApplicationContext(), RegistrationActivity.class));
         } else {
             emailVerified = false;
-            Toast.makeText(getApplicationContext(), "Email Not Verified!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), R.string.email_not_verify_2, Toast.LENGTH_LONG).show();
             startActivity(new Intent(getApplicationContext(), RegistrationActivity.class));
         }
     }

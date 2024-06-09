@@ -51,4 +51,6 @@
     <string name="detail_saved">I tuoi dettagli sono stati salvati</string>
     <string name="getting_position">Accedendo alla tua posizione..</string>
 
+    <string name="email_not_verify_2">Email non Verificata</string>
+
 </resources>

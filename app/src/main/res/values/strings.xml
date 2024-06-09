@@ -50,4 +50,6 @@
     <string name="detail_saved">Your details saved</string>
     <string name="getting_position">Getting Your Current Location..</string>
 
+    <string name="email_not_verify_2">Email not Verified</string>
+
 </resources>
