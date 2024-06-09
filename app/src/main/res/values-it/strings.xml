@@ -42,4 +42,13 @@
     <string name="item_delete">Elemento eliminato</string>
     <string name="loading_data">Caricamento dati..</string>
 
+    <string name="no_match">Non combaciano</string>
+    <string name="invalid_email_format">Formato email non valido</string>
+    <string name="please_wait">Si prega di attendere..</string>
+    <string name="students">Studenti</string>
+    <string name="account_created">Account creato tramite email e password e email di verifica inviata a </string>
+
+    <string name="detail_saved">I tuoi dettagli sono stati salvati</string>
+    <string name="getting_position">Accedendo alla tua posizione..</string>
+
 </resources>

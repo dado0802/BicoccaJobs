@@ -49,27 +49,27 @@ public class AuthenticationActivity extends BaseActivity {
                 email = edtEmail.getText().toString().trim();
                 password = edtPassword.getText().toString().trim();
                 if (email.isEmpty()) {
-                    edtEmail.setError("Required!");
+                    edtEmail.setError(getString(R.string.required));
                     edtEmail.requestFocus();
                     return;
                 }
                 if (password.isEmpty()) {
-                    edtPassword.setError("Required!");
+                    edtPassword.setError(getString(R.string.required));
                     edtPassword.requestFocus();
                     return;
                 }
                 if (edtConfirmPassword.getText().toString().isEmpty()) {
-                    edtConfirmPassword.setError("Required!");
+                    edtConfirmPassword.setError(getString(R.string.required));
                     edtConfirmPassword.requestFocus();
                     return;
                 }
                 if(!password.equals(edtConfirmPassword.getText().toString())){
-                    edtConfirmPassword.setError("Does not match!");
+                    edtConfirmPassword.setError(getString(R.string.no_match));
                     edtConfirmPassword.requestFocus();
                     return;
                 }
                 if(Patterns.EMAIL_ADDRESS.matcher(email).matches()==false){
-                    edtEmail.setError("Invalid email format!");
+                    edtEmail.setError(getString(R.string.invalid_email_format));
                     edtEmail.requestFocus();
                     return;
                 }
@@ -92,7 +92,7 @@ public class AuthenticationActivity extends BaseActivity {
             return;
         }
 
-        showProgressDialog("Please wait..");
+        showProgressDialog(getString(R.string.please_wait));
 
         //This function create user account in firebase authentication with email and password
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -126,10 +126,10 @@ public class AuthenticationActivity extends BaseActivity {
     //Valodations on sign up form
     private boolean validateForm() {
         if (TextUtils.isEmpty(edtEmail.getText().toString())) {
-            edtEmail.setError("Required.");
+            edtEmail.setError(getString(R.string.required));
             return false;
         } else if (TextUtils.isEmpty(edtPassword.getText().toString())) {
-            edtPassword.setError("Required.");
+            edtPassword.setError(getString(R.string.required));
             return false;
         }else {
             edtEmail.setError(null);
@@ -147,18 +147,18 @@ public class AuthenticationActivity extends BaseActivity {
                 if (task.isSuccessful()) {
                     String userId = firebaseUser.getUid();
 
-                    if(SelectionActivity.key.equals("Shop")){
+                    if(SelectionActivity.key.equals(R.string.shop)){
                         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("ShopsData");
                         ShopModelCLass model = new ShopModelCLass(userId,"","",email,"","",password,SelectionActivity.key,false);
                         databaseReference.child(userId).setValue(model);
-                    }else if(SelectionActivity.key.equals("Student")){
+                    }else if(SelectionActivity.key.equals(R.string.students)){
                         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("StudentsData");
                         StudentModelCLass model = new StudentModelCLass(userId,"","",email,"","",password,SelectionActivity.key,false);
                         databaseReference.child(userId).setValue(model);
                     }
 
 
-                    Toast.makeText(getApplicationContext(), "Account created on email password and verification email sent to " + firebaseUser.getEmail(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), R.string.account_created + firebaseUser.getEmail(), Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(getApplicationContext() , VerificationActivity.class);
                     startActivity(intent);
 

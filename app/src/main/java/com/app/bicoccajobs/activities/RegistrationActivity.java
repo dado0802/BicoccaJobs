@@ -60,17 +60,17 @@ public class RegistrationActivity extends BaseActivity {
                 address = edtAddress.getText().toString().trim();
 
                 if(TextUtils.isEmpty(fullName)){
-                   edtName.setError("Required!");
+                   edtName.setError(getString(R.string.required));
                    edtName.requestFocus();
                    return;
                 }
                 if(TextUtils.isEmpty(phone)){
-                    edtPhone.setError("Required!");
+                    edtPhone.setError(getString(R.string.required));
                     edtPhone.requestFocus();
                     return;
                 }
                 if(TextUtils.isEmpty(address)){
-                    edtAddress.setError("Required!");
+                    edtAddress.setError(getString(R.string.required));
                     edtAddress.requestFocus();
                     return;
                 }
@@ -81,25 +81,25 @@ public class RegistrationActivity extends BaseActivity {
 
     //This method store all the data fields of user to firebase...
     private void createAccount(){
-        if(SelectionActivity.key.equals("Shop")){
+        if(SelectionActivity.key.equals(R.string.shop)){
             String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
             DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("ShopsData");
             ShopModelCLass model = new ShopModelCLass(userId,fullName,"",AuthenticationActivity.email,phone,address,
                     AuthenticationActivity.password,SelectionActivity.key, VerificationActivity.emailVerified);
             databaseReference.child(userId).setValue(model);
-            Toast.makeText(this, "Your details saved", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.detail_saved, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getApplicationContext(), ShopActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish();
-        }else if(SelectionActivity.key.equals("Student")){
+        }else if(SelectionActivity.key.equals(R.string.students)){
             String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
             DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("StudentsData");
             StudentModelCLass model = new StudentModelCLass(userId,fullName,"",AuthenticationActivity.email,phone,address,
                     AuthenticationActivity.password,SelectionActivity.key,VerificationActivity.emailVerified);
             databaseReference.child(userId).setValue(model);
 
-            Toast.makeText(getApplicationContext(), "Your details saved", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), R.string.detail_saved, Toast.LENGTH_SHORT).show();
 
             Intent intent = new Intent(getApplicationContext(), StudentActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -110,7 +110,7 @@ public class RegistrationActivity extends BaseActivity {
 
     private void getUserLocation() {
 
-        showProgressDialog("Getting Your Current Location..");
+        showProgressDialog(getString(R.string.getting_position));
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         locationListener = new LocationListener() {

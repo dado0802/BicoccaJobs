@@ -41,4 +41,13 @@
     <string name="item_delete">Item deleted</string>
     <string name="loading_data">Loading data..</string>
 
+    <string name="no_match">Does not match!</string>
+    <string name="invalid_email_format">Invalid email format!</string>
+    <string name="please_wait">Please wait..</string>
+    <string name="students">Students</string>
+    <string name="account_created">Account created on email password and verification email sent to </string>
+
+    <string name="detail_saved">Your details saved</string>
+    <string name="getting_position">Getting Your Current Location..</string>
+
 </resources>
