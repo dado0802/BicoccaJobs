@@ -65,5 +65,15 @@
     <string name="post_added_succesfully">Post Aggiunto Correttamente</string>
     <string name="add_another">AGGIUNGI UN ALTRO</string>
     <string name="go_to_homepage">TORNA ALLA HOMEPAGE</string>
+    <string name="full_name">Nome e Cognome</string>
+    <string name="phone">Telefono</string>
+    <string name="select_your_choice">Effettua La Tua Scelta</string>
+    <string name="shop_2">Attività</string>
+    <string name="loading">Caricamento..</string>
+    <string name="add_job_post">Aggiungi Post di Lavoro</string>
+    <string name="view_my_posts">Vedi I Miei Post</string>
+    <string name="view_all_posts">Vedi Tutti I Post</string>
+    <string name="profile">Profilo</string>
+    <string name="sign_out">Esci</string>
 
 </resources>

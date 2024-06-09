@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:text="SIGN UP"
+            android:text="@string/sign_up"
             android:textColor="#000"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -97,7 +97,7 @@
                     android:id="@+id/edtName"
                     android:inputType="textCapSentences"
                     android:textColor="#000"
-                    android:hint="Full Name"
+                    android:hint="@string/full_name"
                     />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -117,7 +117,7 @@
                     android:drawablePadding="6dp"
                     android:background="#fff"
                     android:textColor="#000"
-                    android:hint="Phone"
+                    android:hint="@string/phone"
                     android:inputType="phone"
                     android:digits="0123456789+"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -128,7 +128,7 @@
                 android:layout_marginTop="6dp"
                 android:paddingStart="6dp"
                 android:layout_marginBottom="24dp"
-                android:hint="Address"
+                android:hint="@string/address"
                 android:background="#fff"
                 android:paddingEnd="6dp">
 
@@ -152,7 +152,7 @@
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:background="@drawable/login_btn_bg"
-        android:text="Sign Up"
+        android:text="@string/sign_up"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold"
