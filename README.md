@@ -1,6 +1,6 @@
 Gruppo SHI
 
-879317 Mora Mattia 
-879387 Olmi Davide
-886221 Bergamaschi Debora
-886411 Amoruso Silvia
+Mora Mattia, matr.879317
+Olmi Davide, matr.879387
+Bergamaschi Debora, matr.886221 
+Amoruso Silvia, matr.886411 
