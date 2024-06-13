@@ -44,7 +44,7 @@
                     android:layout_marginEnd="34dp"
                     android:layout_marginBottom="304dp"
                     android:gravity="center"
-                    android:text="BENVENUTI IN"
+                    android:text="@string/welcome"
                     android:textColor="@color/blueback"
                     android:textSize="26sp"
                     android:textStyle="bold" />
@@ -111,7 +111,7 @@
                                     android:layout_centerHorizontal="true"
                                     android:layout_marginTop="10dp"
                                     android:layout_marginBottom="10dp"
-                                    android:text="Shop"
+                                    android:text="@string/shop_2"
                                     android:textColor="#000"
                                     android:textSize="16sp" />
 
@@ -120,6 +120,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:background="@android:color/transparent" />
+
                             </RelativeLayout>
 
                         </androidx.cardview.widget.CardView>
@@ -154,7 +155,7 @@
                                     android:layout_centerHorizontal="true"
                                     android:layout_marginTop="10dp"
                                     android:layout_marginBottom="10dp"
-                                    android:text="Student"
+                                    android:text="@string/students"
                                     android:textColor="#000"
                                     android:textSize="16sp" />
 
@@ -186,9 +187,9 @@
                 android:layout_marginEnd="37dp"
                 android:layout_marginBottom="259dp"
                 android:gravity="center"
-                android:text="Vuoi effettuare il login come:"
+                android:text="@string/select_your_choice"
                 android:textColor="@color/white"
-                android:textSize="26sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
         </RelativeLayout>

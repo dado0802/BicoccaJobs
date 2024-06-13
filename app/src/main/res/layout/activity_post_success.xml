@@ -19,7 +19,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="100dp"
-                android:text="Post added successfully"
+                android:text="@string/post_added_succesfully"
                 android:textAlignment="center"
                 android:textColor="@color/blueback"
                 android:textSize="34sp" />
@@ -36,7 +36,7 @@
                 android:backgroundTint="@color/blueback"
                 android:textColor="@color/yellowback"
                 android:layout_centerHorizontal="true"
-                android:text="Add Another"
+                android:text="@string/add_another"
                 android:id="@+id/btnAdd"
                 android:textSize="16sp" />
 
@@ -51,7 +51,7 @@
                 android:backgroundTint="@color/blueback"
                 android:textColor="@color/yellowback"
                 android:layout_centerHorizontal="true"
-                android:text="Go To Homepage"
+                android:text="@string/go_to_homepage"
                 android:id="@+id/btnHome"
                 android:textSize="16sp" />
 

@@ -81,7 +81,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Add Job Post"
+                                    android:text="@string/add_job_post"
                                     android:textSize="16sp"
                                     android:id="@+id/tvSub1"
                                     android:textColor="#000"
@@ -126,7 +126,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="View My Posts"
+                                    android:text="@string/view_my_posts"
                                     android:textSize="16sp"
                                     android:layout_below="@+id/imgRenter"
                                     android:id="@+id/tvSub2"
@@ -178,7 +178,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="View All Posts"
+                                    android:text="@string/view_all_posts"
                                     android:textSize="16sp"
                                     android:textColor="#000"
                                     android:layout_below="@+id/imgAll"
@@ -225,12 +225,11 @@
                                     android:id="@+id/imgOrder"
                                     android:src="@drawable/ic_person"
                                     android:scaleType="fitXY"
-                                    app:tint="@color/purple_500"
                                     android:layout_centerInParent="true"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Profile"
+                                    android:text="@string/profile"
                                     android:textSize="16sp"
                                     android:id="@+id/tvSub3"
                                     android:textColor="#000"
@@ -274,7 +273,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Sign Out"
+                                    android:text="@string/sign_out"
                                     android:textSize="16sp"
                                     android:id="@+id/tvHist"
                                     android:textColor="#000"

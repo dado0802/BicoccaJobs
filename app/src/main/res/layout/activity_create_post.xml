@@ -47,7 +47,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:text="Add photos"
+                        android:text="@string/add_photo"
                         android:textColor="#000"
                         android:textSize="16sp" />
 
@@ -133,7 +133,7 @@
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:background="#fff"
-                        android:hint="Title"
+                        android:hint="@string/title"
                         android:textColor="#000" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -156,7 +156,7 @@
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:background="#fff"
-                        android:hint="Short Description"
+                        android:hint="@string/short_description"
                         android:textColor="#000" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -180,7 +180,7 @@
                     android:layout_marginTop="100dp"
                     android:layout_marginRight="20dp"
                     android:background="@color/blueback"
-                    android:text="Add Post"
+                    android:text="@string/add_post"
                     android:textAllCaps="false"
                     android:textColor="@color/yellowback"
                     android:textSize="20sp"

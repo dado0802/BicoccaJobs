@@ -9,7 +9,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Please verify email and then click next"
+        android:text="@string/email_sent"
         android:textStyle="bold"
         android:textAlignment="center"
         android:textSize="20sp"
@@ -26,7 +26,7 @@
 
         android:backgroundTint="@color/blueback"
         android:ems="16"
-        android:text="Next"
+        android:text="@string/next"
         android:textColor="#fff"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/blueback"
-        android:text="Resend"
+        android:text="@string/resend"
         android:textSize="18sp"
         android:id="@+id/tvResend"
         android:layout_below="@+id/verify_button"

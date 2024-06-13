@@ -59,8 +59,8 @@
                         android:id="@+id/profilePercentage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Edit Your Profile Details"
-                        android:textColor="@color/purple_500"
+                        android:text="@string/edit_details"
+                        android:textColor="@color/blueback"
                         android:layout_centerInParent="true"
                         />
                     <ImageView
@@ -89,7 +89,7 @@
                     android:layout_height="wrap_content"
                     android:focusable="true"
                     android:focusableInTouchMode="true"
-                    android:textColorHint="@color/purple_500">
+                    android:textColorHint="@color/blueback">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edtName"
@@ -98,7 +98,7 @@
                         android:drawableLeft="@drawable/ic_person"
                         android:paddingLeft="5dp"
                         android:background="#fff"
-                        android:hint="FullName"
+                        android:hint="@string/full_name"
                         android:textColor="#000" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -110,7 +110,7 @@
                     android:layout_below="@+id/name"
                     android:focusable="true"
                     android:focusableInTouchMode="true"
-                    android:textColorHint="@color/purple_500">
+                    android:textColorHint="@color/blueback">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edtPhone"
@@ -120,8 +120,8 @@
                         android:inputType="phone"
                         android:digits="0123456789+"
                         android:background="#fff"
-                        android:hint="Phone"
-                        android:textColor="#000" />
+                        android:hint="@string/phone"
+                        android:textColor="@color/blueback" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -132,7 +132,7 @@
                     android:layout_marginTop="6dp"
                     android:background="#fff"
                     android:paddingEnd="6dp"
-                    android:textColorHint="@color/purple_500">
+                    android:textColorHint="@color/blueback">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -140,8 +140,8 @@
                         android:drawableStart="@drawable/ic_location"
                         android:id="@+id/edtAddress"
                         android:background="#fff"
-                        android:textColor="#000"
-                        android:hint="Address"
+                        android:textColor="@color/blueback"
+                        android:hint="@string/address"
                         android:inputType="textPostalAddress" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -152,7 +152,7 @@
                     android:layout_below="@+id/address"
                     android:focusable="true"
                     android:focusableInTouchMode="true"
-                    android:textColorHint="@color/purple_500">
+                    android:textColorHint="@color/blueback">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edtEmail"
@@ -170,7 +170,7 @@
                     android:layout_below="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColorHint="@color/purple_500"
+                    android:textColorHint="@color/blueback"
                     app:passwordToggleEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -192,7 +192,7 @@
                     android:layout_below="@+id/password"
                     android:layout_marginLeft="28dp"
                     android:layout_marginTop="15dp"
-                    android:text="Email Status"
+                    android:text="@string/email_not_verify"
                     android:textColor="@color/white"
                     android:textSize="17sp" />
 
@@ -203,8 +203,8 @@
                     android:layout_below="@+id/tvEmailStatus"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="25dp"
-                    android:background="@drawable/login_btn_bg"
-                    android:text="Update Details"
+                    android:backgroundTint="@color/yellowback"
+                    android:text="@string/update_details"
                     android:textColor="@color/blueback"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -216,8 +216,8 @@
                     android:layout_below="@+id/btnUpdate"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/login_btn_bg"
-                    android:text="Update Password"
+                    android:backgroundTint="@color/yellowback"
+                    android:text="@string/update_password"
                     android:textColor="@color/blueback"
                     android:textSize="16sp"
                     android:textStyle="bold" />

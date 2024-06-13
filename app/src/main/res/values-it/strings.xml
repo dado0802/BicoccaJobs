@@ -67,7 +67,7 @@
     <string name="go_to_homepage">TORNA ALLA HOMEPAGE</string>
     <string name="full_name">Nome e Cognome</string>
     <string name="phone">Telefono</string>
-    <string name="select_your_choice">Sei:</string>
+    <string name="select_your_choice">Vuoi effettuare il login come:</string>
     <string name="shop_2">Attività</string>
     <string name="loading">Caricamento..</string>
     <string name="add_job_post">Aggiungi Post di Lavoro</string>
@@ -84,5 +84,10 @@
     <string name="resend">Invia Di Nuovo</string>
     <string name="all_job">Annunci Di Lavoro</string>
     <string name="my_post">I Miei Post</string>
+
+    <string name="no_reg">Non sei ancora registrato? Registrati ora</string>
+    <string name="yes_reg">Sei già registrato? Effettua il login!</string>
+    <string name="complete_profile">Completa il tuo profilo</string>
+    <string name="welcome">BENVENUTI IN</string>
 
 </resources>

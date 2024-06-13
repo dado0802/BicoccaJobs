@@ -84,4 +84,9 @@
     <string name="all_job">Job Post</string>
     <string name="my_post">My Post</string>
 
+    <string name="no_reg">Not registered yet? Sign up now!</string>
+    <string name="yes_reg">Already registered? Sign in now!</string>
+    <string name="complete_profile">Complete your profile</string>
+    <string name="welcome">WELCOME TO</string>
+
 </resources>
