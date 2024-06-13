@@ -4,18 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_design">
+    android:background="@drawable/background">
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/please_verify"
+        android:text="Please verify email and then click next"
         android:textStyle="bold"
         android:textAlignment="center"
         android:textSize="20sp"
         android:layout_centerInParent="true"
         android:layout_margin="10dp"
-        android:textColor="#fff"/>
+        android:textColor="@color/blueback"/>
 
     <Button
         android:id="@+id/verify_button"
@@ -23,9 +23,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView"
         android:layout_centerInParent="true"
-        android:background="@drawable/roundedtextview2"
+
+        android:backgroundTint="@color/blueback"
         android:ems="16"
-        android:text="@string/next"
+        android:text="Next"
         android:textColor="#fff"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -33,8 +34,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#fff"
-        android:text="@string/resend"
+        android:textColor="@color/blueback"
+        android:text="Resend"
         android:textSize="18sp"
         android:id="@+id/tvResend"
         android:layout_below="@+id/verify_button"

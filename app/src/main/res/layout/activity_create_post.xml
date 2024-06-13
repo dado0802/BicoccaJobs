@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff">
+    android:background="@drawable/background">
 
     <ImageView
         android:layout_width="35dp"
@@ -47,7 +47,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:text="@string/add_photo"
+                        android:text="Add photos"
                         android:textColor="#000"
                         android:textSize="16sp" />
 
@@ -133,7 +133,7 @@
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:background="#fff"
-                        android:hint="@string/title"
+                        android:hint="Title"
                         android:textColor="#000" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -156,7 +156,7 @@
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:background="#fff"
-                        android:hint="@string/short_description"
+                        android:hint="Short Description"
                         android:textColor="#000" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -179,10 +179,10 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="100dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/purple_500"
-                    android:text="@string/add_post"
+                    android:background="@color/blueback"
+                    android:text="Add Post"
                     android:textAllCaps="false"
-                    android:textColor="#fff"
+                    android:textColor="@color/yellowback"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 

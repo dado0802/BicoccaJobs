@@ -8,24 +8,24 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F9FCFD">
+        android:background="@color/blueback">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="#F9FCFD"
+            android:background="@color/blueback"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#F9FCFD">
+                android:background="@color/blueback">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="230dp"
-                    android:background="@drawable/background_design"
+                    android:background="@drawable/background"
                     android:orientation="vertical">
 
 
@@ -34,8 +34,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:text="@string/loading"
-                        android:textColor="#fff"
+                        android:text="Loading.."
+                        android:textColor="@color/blueback"
                         android:textSize="26sp"
                         android:textStyle="bold" />
                 </RelativeLayout>
@@ -81,7 +81,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/add_job_post"
+                                    android:text="Add Job Post"
                                     android:textSize="16sp"
                                     android:id="@+id/tvSub1"
                                     android:textColor="#000"
@@ -126,7 +126,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/view_my_posts"
+                                    android:text="View My Posts"
                                     android:textSize="16sp"
                                     android:layout_below="@+id/imgRenter"
                                     android:id="@+id/tvSub2"
@@ -178,7 +178,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/view_all_posts"
+                                    android:text="View All Posts"
                                     android:textSize="16sp"
                                     android:textColor="#000"
                                     android:layout_below="@+id/imgAll"
@@ -230,7 +230,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/profile"
+                                    android:text="Profile"
                                     android:textSize="16sp"
                                     android:id="@+id/tvSub3"
                                     android:textColor="#000"
@@ -274,7 +274,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/sign_out"
+                                    android:text="Sign Out"
                                     android:textSize="16sp"
                                     android:id="@+id/tvHist"
                                     android:textColor="#000"

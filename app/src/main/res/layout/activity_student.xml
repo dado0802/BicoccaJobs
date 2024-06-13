@@ -8,26 +8,26 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F9FCFD">
+        android:background="@color/blueback">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="#F9FCFD"
+            android:background="@color/blueback"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#F9FCFD">
+                android:background="@color/blueback">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="230dp"
                     android:layout_marginLeft="-30dp"
                     android:layout_marginRight="-30dp"
-                    android:background="@drawable/background_design"
+                    android:background="@drawable/background"
                     android:orientation="vertical">
 
 
@@ -37,8 +37,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:text="@string/loading"
-                        android:textColor="#fff"
+                        android:text="Loading.."
+                        android:textColor="@color/blueback"
                         android:textSize="26sp"
                         android:textStyle="bold" />
                 </RelativeLayout>
@@ -83,7 +83,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/view_job_posts"
+                                    android:text="View Job Posts"
                                     android:textSize="16sp"
                                     android:id="@+id/tvSub1"
                                     android:textColor="#000"
@@ -130,13 +130,12 @@
                                     android:layout_height="50dp"
                                     android:id="@+id/imgOrder"
                                     android:src="@drawable/ic_person"
-                                    app:tint="@color/purple_500"
                                     android:scaleType="fitXY"
                                     android:layout_centerInParent="true"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/profile"
+                                    android:text="Profile"
                                     android:textSize="16sp"
                                     android:id="@+id/tvSub3"
                                     android:textColor="#000"
@@ -180,7 +179,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/sign_out"
+                                    android:text="Sign Out"
                                     android:textSize="16sp"
                                     android:id="@+id/tvHist"
                                     android:textColor="#000"

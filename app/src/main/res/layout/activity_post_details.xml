@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white">
+    android:background="@color/blueback">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -43,7 +43,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_toRightOf="@+id/imgUserPic"
                 android:text="Shop Name"
-                android:textColor="#000"
+                android:textColor="@color/yellowback"
                 android:textSize="20sp" />
 
             <androidx.cardview.widget.CardView
@@ -90,7 +90,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:text="Job Title"
-                android:textColor="@color/black"
+                android:textColor="@color/yellowback"
                 android:textSize="22sp" />
 
             <TextView
@@ -100,8 +100,8 @@
                 android:layout_below="@+id/tvPlantName"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
-                android:text="@string/short_description"
-                android:textColor="#000"
+                android:text="Short Description"
+                android:textColor="@color/yellowback"
                 android:textSize="18sp" />
 
             <TextView
@@ -122,8 +122,8 @@
                 android:layout_below="@+id/tvDescription"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
-                android:text="@string/address"
-                android:textColor="#000"
+                android:text="Address"
+                android:textColor="@color/yellowback"
                 android:textSize="18sp" />
 
             <TextView
@@ -158,10 +158,10 @@
                 android:layout_alignParentBottom="true"
                 android:background="@color/purple_500"
                 android:layout_marginBottom="10dp"
-                android:text="@string/candidate_email"
+                android:text="Candidate Email"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#fff"/>
+                android:textColor="@color/blueback"/>
 
         </RelativeLayout>
 

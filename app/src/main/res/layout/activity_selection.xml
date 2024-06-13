@@ -1,56 +1,79 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <ScrollView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F9FCFD">
-        <LinearLayout
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/blueback"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="#F9FCFD"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true">
+            android:layout_height="747dp"
+            android:background="@color/blueback">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#F9FCFD">
+                android:layout_height="400dp"
+                android:layout_marginLeft="-30dp"
+                android:layout_marginRight="-30dp"
+                android:background="@drawable/background"
+                android:orientation="vertical">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    android:layout_marginLeft="-30dp"
-                    android:layout_marginRight="-30dp"
-                    android:background="@drawable/background_design"
-                    android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="41dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="61dp"
+                    android:layout_marginEnd="34dp"
+                    android:layout_marginBottom="304dp"
+                    android:gravity="center"
+                    android:text="BENVENUTI IN"
+                    android:textColor="@color/blueback"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
 
-
-                    <TextView
-                        android:id="@+id/tvName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginLeft="35dp"
-                        android:layout_marginBottom="35dp"
-                        android:text="@string/select_your_choice"
-                        android:textColor="#fff"
-                        android:textSize="26sp"
-                        android:textStyle="bold" />
-                </RelativeLayout>
-
-                <LinearLayout
+                <ImageView
+                    android:id="@+id/logoImageView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:layout_marginTop="270dp"
+                    android:layout_centerInParent="true"
+                    android:scaleX="0.6"
+                    android:scaleY="0.6"
+                    android:src="@drawable/logo"
+                    android:translationY="50dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="5000dp"
+                android:background="@color/transparent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp">
+                    android:layout_marginTop="500dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -60,37 +83,37 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="0dp"
                             android:layout_height="135dp"
-                            app:cardCornerRadius="12dp"
+                            android:layout_gravity="center"
                             android:layout_marginRight="5dp"
+                            android:layout_weight="0.8"
                             android:clickable="true"
                             android:elevation="5dp"
-                            app:cardBackgroundColor="#FFFFFF"
-                            android:layout_weight="0.8"
-                            android:layout_gravity="center"
                             android:orientation="vertical"
-                            >
+                            app:cardBackgroundColor="#FFFFFF"
+                            app:cardCornerRadius="12dp">
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent">
 
                                 <ImageView
+                                    android:id="@+id/imgWholesale"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"
-                                    android:id="@+id/imgWholesale"
-                                    android:src="@drawable/shop"
-                                    android:layout_centerInParent="true"/>
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/shop" />
+
                                 <TextView
+                                    android:id="@+id/tvSub1"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/shop_2"
-                                    android:textSize="16sp"
-                                    android:id="@+id/tvSub1"
-                                    android:textColor="#000"
                                     android:layout_below="@+id/imgWholesale"
                                     android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="10dp"
                                     android:layout_marginBottom="10dp"
-                                    android:layout_marginTop="10dp"/>
+                                    android:text="Shop"
+                                    android:textColor="#000"
+                                    android:textSize="16sp" />
 
                                 <Button
                                     android:id="@+id/btnShop"
@@ -104,36 +127,36 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="0dp"
                             android:layout_height="135dp"
-                            app:cardCornerRadius="12dp"
+                            android:layout_gravity="center"
                             android:layout_marginLeft="5dp"
+                            android:layout_weight="0.8"
                             android:clickable="true"
                             android:elevation="5dp"
-                            android:layout_weight="0.8"
-                            android:layout_gravity="center"
                             android:orientation="vertical"
-                            >
+                            app:cardCornerRadius="12dp">
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent">
 
                                 <ImageView
+                                    android:id="@+id/imgRenter"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"
-                                    android:id="@+id/imgRenter"
-                                    android:src="@drawable/student"
-                                    android:layout_centerInParent="true"/>
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/student" />
+
                                 <TextView
+                                    android:id="@+id/tvSub2"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/students"
-                                    android:textSize="16sp"
                                     android:layout_below="@+id/imgRenter"
-                                    android:id="@+id/tvSub2"
-                                    android:textColor="#000"
                                     android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="10dp"
                                     android:layout_marginBottom="10dp"
-                                    android:layout_marginTop="10dp"/>
+                                    android:text="Student"
+                                    android:textColor="#000"
+                                    android:textSize="16sp" />
 
                                 <Button
                                     android:id="@+id/btnStudent"
@@ -150,8 +173,28 @@
 
             </RelativeLayout>
 
-        </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="38dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="453dp"
+                android:layout_marginEnd="37dp"
+                android:layout_marginBottom="259dp"
+                android:gravity="center"
+                android:text="Vuoi effettuare il login come:"
+                android:textColor="@color/white"
+                android:textSize="26sp"
+                android:textStyle="bold" />
 
-    </ScrollView>
+        </RelativeLayout>
 
-</RelativeLayout>
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFF">
+        android:background="@color/blueback">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -20,7 +20,7 @@
                     android:layout_height="200dp"
                     android:layout_marginRight="-30dp"
                     android:layout_marginLeft="-30dp"
-                    android:background="@drawable/background_design">
+                    android:background="@drawable/background">
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/imgUserPic"
                         android:layout_width="130dp"
@@ -59,7 +59,7 @@
                         android:id="@+id/profilePercentage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/edit_details"
+                        android:text="Edit Your Profile Details"
                         android:textColor="@color/purple_500"
                         android:layout_centerInParent="true"
                         />
@@ -98,7 +98,7 @@
                         android:drawableLeft="@drawable/ic_person"
                         android:paddingLeft="5dp"
                         android:background="#fff"
-                        android:hint="@string/full_name"
+                        android:hint="FullName"
                         android:textColor="#000" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -120,7 +120,7 @@
                         android:inputType="phone"
                         android:digits="0123456789+"
                         android:background="#fff"
-                        android:hint="@string/phone"
+                        android:hint="Phone"
                         android:textColor="#000" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -141,7 +141,7 @@
                         android:id="@+id/edtAddress"
                         android:background="#fff"
                         android:textColor="#000"
-                        android:hint="@string/address"
+                        android:hint="Address"
                         android:inputType="textPostalAddress" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -193,18 +193,19 @@
                     android:layout_marginLeft="28dp"
                     android:layout_marginTop="15dp"
                     android:text="Email Status"
-                    android:textColor="#000"
+                    android:textColor="@color/white"
                     android:textSize="17sp" />
+
                 <Button
                     android:id="@+id/btnUpdate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tvEmailStatus"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="36dp"
+                    android:layout_marginTop="25dp"
                     android:background="@drawable/login_btn_bg"
-                    android:text="@string/update_details"
-                    android:textColor="#fff"
+                    android:text="Update Details"
+                    android:textColor="@color/blueback"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -216,8 +217,8 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/login_btn_bg"
-                    android:text="@string/update_password"
-                    android:textColor="#fff"
+                    android:text="Update Password"
+                    android:textColor="@color/blueback"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
