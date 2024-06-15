@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.DharuraApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.BicoccaJobs" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/blueback</item>
         <item name="colorPrimaryVariant">@color/blueback</item>

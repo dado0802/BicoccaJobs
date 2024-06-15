@@ -13,7 +13,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.DharuraApp">
+        android:theme="@style/Theme.BicoccaJobs">
 
         <activity android:name=".activities.shop.ViewAllPostsActivity"/>
         <activity android:name="com.app.bicoccajobs.activities.student.PostDetailsActivity"/>
