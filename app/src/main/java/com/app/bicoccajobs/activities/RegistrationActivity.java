@@ -81,7 +81,7 @@ public class RegistrationActivity extends BaseActivity {
 
     //This method store all the data fields of user to firebase...
     private void createAccount(){
-        if(SelectionActivity.key.equals(R.string.shop)){
+        if(SelectionActivity.key.equals("Shop")){
             String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
             DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("ShopsData");
             ShopModelCLass model = new ShopModelCLass(userId,fullName,"",AuthenticationActivity.email,phone,address,
@@ -92,7 +92,7 @@ public class RegistrationActivity extends BaseActivity {
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish();
-        }else if(SelectionActivity.key.equals(R.string.students)){
+        }else if(SelectionActivity.key.equals("Student")){
             String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
             DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("StudentsData");
             StudentModelCLass model = new StudentModelCLass(userId,fullName,"",AuthenticationActivity.email,phone,address,
