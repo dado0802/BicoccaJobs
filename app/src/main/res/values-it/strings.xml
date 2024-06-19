@@ -46,7 +46,7 @@
     <string name="invalid_email_format">Formato email non valido</string>
     <string name="please_wait">Si prega di attendere..</string>
     <string name="students">Studenti</string>
-    <string name="account_created">Account creato tramite email e password e email di verifica inviata a </string>
+    <string name="account_created">Account creato tramite email e password e email di verifica inviata </string>
 
     <string name="detail_saved">I tuoi dettagli sono stati salvati</string>
     <string name="getting_position">Accedendo alla tua posizione..</string>
@@ -61,7 +61,7 @@
     <string name="add_post">AGGIUNGI POST</string>
     <string name="forgot_password">Password Dimenticata?</string>
     <string name="address">Indirizzo</string>
-    <string name="candidate_email">Candida Email</string>
+    <string name="candidate_email">Candidati Ora</string>
     <string name="post_added_succesfully">Post Aggiunto Correttamente</string>
     <string name="add_another">AGGIUNGI UN ALTRO</string>
     <string name="go_to_homepage">TORNA ALLA HOMEPAGE</string>

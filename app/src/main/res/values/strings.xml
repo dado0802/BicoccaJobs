@@ -45,7 +45,7 @@
     <string name="invalid_email_format">Invalid email format!</string>
     <string name="please_wait">Please wait..</string>
     <string name="students">Students</string>
-    <string name="account_created">Account created on email password and verification email sent to </string>
+    <string name="account_created">Account created on email password and verification email sent </string>
 
     <string name="detail_saved">Your details saved</string>
     <string name="getting_position">Getting Your Current Location..</string>
@@ -60,7 +60,7 @@
     <string name="add_post">ADD POST</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="address">Address</string>
-    <string name="candidate_email">Candidate Email</string>
+    <string name="candidate_email">Apply For The Job</string>
     <string name="post_added_succesfully">Post Added Successfully</string>
     <string name="add_another">ADD ANOTHER</string>
     <string name="go_to_homepage">GO TO HOMEPAGE</string>

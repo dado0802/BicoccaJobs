@@ -158,7 +158,7 @@ public class AuthenticationActivity extends BaseActivity {
                     }
 
 
-                    Toast.makeText(getApplicationContext(), R.string.account_created + firebaseUser.getEmail(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), R.string.account_created, Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(getApplicationContext() , VerificationActivity.class);
                     startActivity(intent);
 
