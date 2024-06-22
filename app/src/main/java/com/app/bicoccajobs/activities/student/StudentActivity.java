@@ -77,8 +77,8 @@ public class StudentActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(StudentActivity.this);
-                builder.setTitle("Confirmation?");
-                builder.setMessage("Are you sure to sign out?").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                builder.setTitle(R.string.confirm);
+                builder.setMessage(R.string.sign_out_conf).setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         editor.clear();
@@ -103,7 +103,7 @@ public class StudentActivity extends BaseActivity {
     //Getting current logged in mechanic data from firebase realtime database.
     private void loadUserData() {
 
-        showProgressDialog("Preparing app functions..");
+        showProgressDialog(getString(R.string.prepearing));
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -121,10 +121,10 @@ public class StudentActivity extends BaseActivity {
                 for(DataSnapshot snapshot1 : snapshot.getChildren()){ }
 
                 if(fullName.equals("")){
-                    tvName.setText("Account not completed");
+                    tvName.setText(R.string.account_not_complete);
                     AlertDialog.Builder builder = new AlertDialog.Builder(StudentActivity.this);
                     builder.setTitle("Alert!");
-                    builder.setMessage("Please complete your account from profile screen").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    builder.setMessage(R.string.complete_profile).setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.dismiss();

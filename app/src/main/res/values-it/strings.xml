@@ -89,5 +89,6 @@
     <string name="yes_reg">Sei già registrato? Effettua il login!</string>
     <string name="complete_profile">Completa il tuo profilo</string>
     <string name="welcome">BENVENUTI IN</string>
+    <string name="yes">Si</string>
 
 </resources>

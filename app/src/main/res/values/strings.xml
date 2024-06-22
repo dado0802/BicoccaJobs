@@ -88,5 +88,6 @@
     <string name="yes_reg">Already registered? Sign in now!</string>
     <string name="complete_profile">Complete your profile</string>
     <string name="welcome">WELCOME TO</string>
+    <string name="yes">Yes</string>
 
 </resources>

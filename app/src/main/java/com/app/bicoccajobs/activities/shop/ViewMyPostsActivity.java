@@ -122,7 +122,7 @@ public class ViewMyPostsActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(mcontext);
                     builder.setTitle(R.string.confirmation);
-                    builder.setMessage(R.string.delete).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    builder.setMessage(R.string.delete).setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             databaseReference.child(post.getId()).removeValue();

@@ -98,7 +98,7 @@ public class ShopActivity extends BaseActivity {
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(ShopActivity.this);
                 builder.setTitle(R.string.confirm);
-                builder.setMessage(R.string.sign_out_conf).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                builder.setMessage(R.string.sign_out_conf).setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         editor.clear();
