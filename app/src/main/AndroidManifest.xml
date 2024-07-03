@@ -15,25 +15,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BicoccaJobs">
 
-        <activity android:name=".activities.shop.ViewAllPostsActivity"/>
-        <activity android:name="com.app.bicoccajobs.activities.student.PostDetailsActivity"/>
-        <activity android:name="com.app.bicoccajobs.activities.shop.ViewMyPostsActivity"/>
-        <activity android:name="com.app.bicoccajobs.activities.student.ViewJobPostsActivity"/>
-        <activity android:name="com.app.bicoccajobs.activities.shop.PostSuccessActivity"/>
-        <activity android:name="com.app.bicoccajobs.activities.shop.CreatePostActivity"/>
-        <activity android:name="com.app.bicoccajobs.activities.student.StudentActivity"/>
-        <activity android:name="com.app.bicoccajobs.activities.shop.ShopActivity"/>
-        <activity android:name="com.app.bicoccajobs.activities.RegistrationActivity"/>
-        <activity android:name="com.app.bicoccajobs.activities.VerificationActivity"/>
-        <activity android:name="com.app.bicoccajobs.activities.AuthenticationActivity"/>
-        <activity android:name="com.app.bicoccajobs.activities.student.StudentLoginActivity"/>
-        <activity android:name="com.app.bicoccajobs.activities.SelectionActivity"/>
-        <activity android:name="com.app.bicoccajobs.activities.student.StudentProfileActivity"/>
-        <activity android:name="com.app.bicoccajobs.activities.shop.ShopProfileActivity"/>
-        <activity android:name="com.app.bicoccajobs.activities.shop.ShopLoginActivity"/>
+        <activity android:name=".ui.shop.ViewAllPostsActivity"/>
+        <activity android:name="com.app.bicoccajobs.ui.student.PostDetailsActivity"/>
+        <activity android:name="com.app.bicoccajobs.ui.shop.ViewMyPostsActivity"/>
+        <activity android:name="com.app.bicoccajobs.ui.student.ViewJobPostsActivity"/>
+        <activity android:name="com.app.bicoccajobs.ui.shop.PostSuccessActivity"/>
+        <activity android:name="com.app.bicoccajobs.ui.shop.CreatePostActivity"/>
+        <activity android:name="com.app.bicoccajobs.ui.student.StudentActivity"/>
+        <activity android:name="com.app.bicoccajobs.ui.shop.ShopActivity"/>
+        <activity android:name="com.app.bicoccajobs.ui.RegistrationActivity"/>
+        <activity android:name="com.app.bicoccajobs.ui.VerificationActivity"/>
+        <activity android:name="com.app.bicoccajobs.ui.AuthenticationActivity"/>
+        <activity android:name="com.app.bicoccajobs.ui.student.StudentLoginActivity"/>
+        <activity android:name="com.app.bicoccajobs.ui.SelectionActivity"/>
+        <activity android:name="com.app.bicoccajobs.ui.student.StudentProfileActivity"/>
+        <activity android:name="com.app.bicoccajobs.ui.shop.ShopProfileActivity"/>
+        <activity android:name="com.app.bicoccajobs.ui.shop.ShopLoginActivity"/>
 
         <activity
-            android:name="com.app.bicoccajobs.activities.SplashActivity"
+            android:name="com.app.bicoccajobs.ui.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -94,6 +94,7 @@
                                     android:id="@+id/btnAddPost"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
+                                    android:onClick="onAddPostClick"
                                     android:background="@android:color/transparent" />
                             </RelativeLayout>
 
@@ -137,6 +138,7 @@
 
                                 <Button
                                     android:id="@+id/btnView"
+                                    android:onClick="onViewMyPostClick"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:background="@android:color/transparent" />
@@ -188,6 +190,7 @@
 
                                 <Button
                                     android:id="@+id/btnViewALl"
+                                    android:onClick="onViewAllPostsClick"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:background="@android:color/transparent" />
@@ -239,6 +242,7 @@
 
                                 <Button
                                     android:id="@+id/btnProfile"
+                                    android:onClick="onViewProfileClick"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:background="@android:color/transparent" />
@@ -283,6 +287,7 @@
 
                                 <Button
                                     android:id="@+id/btnSignOut"
+                                    android:onClick="onSignOutClick"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:background="@android:color/transparent" />

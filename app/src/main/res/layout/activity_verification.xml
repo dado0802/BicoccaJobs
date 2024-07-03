@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView"
         android:layout_centerInParent="true"
-
+        android:onClick="onVerifyClick"
         android:backgroundTint="@color/blueback"
         android:ems="16"
         android:text="@string/next"
@@ -37,6 +37,7 @@
         android:textColor="@color/blueback"
         android:text="@string/resend"
         android:textSize="18sp"
+        android:onClick="onResendClick"
         android:id="@+id/tvResend"
         android:layout_below="@+id/verify_button"
         android:textStyle="bold"
