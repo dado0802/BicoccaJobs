@@ -1,8 +1,9 @@
 package com.app.bicoccajobs.models;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class PostModelClass {
+public class PostModelClass implements Serializable {
     private String id;
     private List<String> urlList;
     private String title;

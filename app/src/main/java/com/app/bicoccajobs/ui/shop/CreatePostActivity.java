@@ -5,17 +5,27 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.camera.core.CameraSelector;
+import androidx.camera.core.ImageCapture;
+import androidx.camera.core.ImageCaptureException;
+import androidx.camera.core.Preview;
+import androidx.camera.lifecycle.ProcessCameraProvider;
+import androidx.camera.view.PreviewView;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.app.bicoccajobs.R;
@@ -30,30 +40,30 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import java.io.ByteArrayOutputStream;
+import com.google.common.util.concurrent.ListenableFuture;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
-public class CreatePostActivity extends AppCompatActivity{
+public class CreatePostActivity extends AppCompatActivity {
 
-    ActivityCreatePostBinding binding;
     private static final int STORAGE_PERMISSION_CODE = 100;
     private static final int CAMERA_PERMISSION_CODE = 104;
     private static final int CAMERA_REQUEST_CODE = 101;
     private static final int PICK_IMAGE = 102;
-    boolean mGranted, flag;
-    AlertDialog alertDialog;
+    private static final int REQUEST_CODE_PERMISSIONS = 10;
+    private static final String[] REQUIRED_PERMISSIONS = new String[]{Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE};
+    private ActivityCreatePostBinding binding;
+    private boolean mGranted, flag;
+    private AlertDialog alertDialog;
+    private ProgressDialog mProgressDialog;
     private Uri ImageUri;
-    ProgressDialog mProgressDialog;
-    DatabaseReference databaseReference;
-    StorageReference mStorageRef;
-
-    public static List<String> urlList;
-    String Title="", Desc="";
-    public static PostModelClass model;
+    private static List<String> urlList;
+    private DatabaseReference databaseReference;
+    private StorageReference mStorageRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,142 +71,114 @@ public class CreatePostActivity extends AppCompatActivity{
         binding = ActivityCreatePostBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        if (allPermissionsGranted()) {
+            // Permessi concessi, possiamo procedere
+        } else {
+            ActivityCompat.requestPermissions(this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS);
+        }
 
         databaseReference = FirebaseDatabase.getInstance().getReference("JobPosts");
-        mStorageRef = FirebaseStorage.getInstance().getReference("JobPosts/") ;
-
+        mStorageRef = FirebaseStorage.getInstance().getReference("JobPosts/");
         urlList = new ArrayList<>();
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         binding.recyclerView.setHasFixedSize(true);
         binding.recyclerView.setLayoutManager(linearLayoutManager);
 
+        binding.imgCancel.setOnClickListener(v -> finish());
 
-        binding.imgCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-        binding.layoutSelectPic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                CharSequence arr[] = new CharSequence[]{
-                        //"TAKE A PHOTO",
-                        getString(R.string.library),
-                        getString(R.string.cancel)
-                };
+        binding.layoutSelectPic.setOnClickListener(v -> {
+            CharSequence arr[] = new CharSequence[]{
+                    "TAKE A PHOTO",
+                    getString(R.string.library),
+                    getString(R.string.cancel)
+            };
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(CreatePostActivity.this);
-                builder.setTitle(R.string.select);
-                builder.setItems(arr, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        /*if(i==0){
-                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                if (!flag) {
-                                    if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-                                        requestPermissions(new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION_CODE);
-                                        return;
-                                    }
-                                }
+            AlertDialog.Builder builder = new AlertDialog.Builder(CreatePostActivity.this);
+            builder.setTitle(R.string.select);
+            builder.setItems(arr, (dialogInterface, i) -> {
+                if (i == 0) {
+                    Intent intent = new Intent(CreatePostActivity.this, CameraActivity.class);
+                    startActivityForResult(intent, CAMERA_REQUEST_CODE);
+                }
+                if (i == 1) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        if (!mGranted) {
+                            if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                                requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
+                                return;
                             }
-
-                            Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                            startActivityForResult(intent, CAMERA_REQUEST_CODE);
-                        }*/
-                        if(i==0) {
-                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                if (!mGranted) {
-                                    if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                                        requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
-                                        return;
-                                    }
-                                }
-                            }
-
-                            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                            intent.setType("image/*");
-                            intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-                            startActivityForResult(intent, PICK_IMAGE);
-
-                        }
-                        if(i == 1){
-                            alertDialog.dismiss();
                         }
                     }
-                });
-                alertDialog = builder.create();
-                alertDialog.show();
-            }
+
+                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                    intent.setType("image/*");
+                    intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+                    startActivityForResult(intent, PICK_IMAGE);
+                }
+                if (i == 2) {
+                    alertDialog.dismiss();
+                }
+            });
+            alertDialog = builder.create();
+            alertDialog.show();
         });
 
-        binding.btnPost.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Title = binding.edtTitle.getText().toString().trim();
-                Desc = binding.edtDescription.getText().toString().trim();
+        binding.btnPost.setOnClickListener(v -> {
+            String Title = binding.edtTitle.getText().toString().trim();
+            String Desc = binding.edtDescription.getText().toString().trim();
 
-                if(urlList.size()<1){
-                    Toast.makeText(CreatePostActivity.this, R.string.toast_info, Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if(TextUtils.isEmpty(Title)){
-                    binding.edtTitle.setError(getString(R.string.missing_title));
-                    binding.edtTitle.requestFocus();
-                    return;
-                }
-                if(TextUtils.isEmpty(Desc)){
-                    binding.edtDescription.setError(getString(R.string.missing_des));
-                    binding.edtDescription.requestFocus();
-                    return;
-                }
-
-                String id = databaseReference.push().getKey();
-
-                model = new PostModelClass(id,urlList,Title,Desc,ShopActivity.userId,ShopActivity.fullName,ShopActivity.pic,ShopActivity.email,ShopActivity.address,"");
-                databaseReference.child(id).setValue(model);
-
-                Toast.makeText(CreatePostActivity.this, R.string.toast_upload, Toast.LENGTH_SHORT).show();
-
-                binding.edtTitle.setText("");
-                binding.edtDescription.setText("");
-                hideProgressDialog();
-                binding.recyclerView.setAdapter(null);
-
-                startActivity(new Intent(getApplicationContext(), PostSuccessActivity.class));
-
+            if (urlList.size() < 1) {
+                Toast.makeText(CreatePostActivity.this, R.string.toast_info, Toast.LENGTH_SHORT).show();
+                return;
             }
+            if (TextUtils.isEmpty(Title)) {
+                binding.edtTitle.setError(getString(R.string.missing_title));
+                binding.edtTitle.requestFocus();
+                return;
+            }
+            if (TextUtils.isEmpty(Desc)) {
+                binding.edtDescription.setError(getString(R.string.missing_des));
+                binding.edtDescription.requestFocus();
+                return;
+            }
+
+            String id = databaseReference.push().getKey();
+            PostModelClass model = new PostModelClass(id, urlList, Title, Desc, ShopActivity.userId, ShopActivity.fullName, ShopActivity.pic, ShopActivity.email, ShopActivity.address, "");
+            databaseReference.child(id).setValue(model);
+
+            // Passa l'oggetto model tramite l'Intent
+            Intent intent = new Intent(getApplicationContext(), PostSuccessActivity.class);
+            intent.putExtra("model", model);
+            startActivity(intent);
+
+            Toast.makeText(CreatePostActivity.this, R.string.toast_upload, Toast.LENGTH_SHORT).show();
+
+            binding.edtTitle.setText("");
+            binding.edtDescription.setText("");
+            hideProgressDialog();
+            binding.recyclerView.setAdapter(null);
         });
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
-
-        if (requestCode == STORAGE_PERMISSION_CODE && grantResults.length > 0) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(getApplicationContext(), R.string.toast_storage, Toast.LENGTH_SHORT).show();
-                mGranted = true;
-
-                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                intent.setType("image/*");
-                intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-                startActivityForResult(intent, PICK_IMAGE);
-            } else {
-                Toast.makeText(getApplicationContext(), "Permission Denied", Toast.LENGTH_SHORT).show();
+    private boolean allPermissionsGranted() {
+        for (String permission : REQUIRED_PERMISSIONS) {
+            if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
+                return false;
             }
         }
-        if (requestCode == CAMERA_PERMISSION_CODE && grantResults.length > 0) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(getApplicationContext(), "Permission Granted", Toast.LENGTH_SHORT).show();
-                flag = true;
+        return true;
+    }
 
-                Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent, CAMERA_REQUEST_CODE);
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == REQUEST_CODE_PERMISSIONS) {
+            if (allPermissionsGranted()) {
+                // Permessi concessi, possiamo procedere
             } else {
-                Toast.makeText(getApplicationContext(), "Permission Denied", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Permissions not granted by the user.", Toast.LENGTH_SHORT).show();
+                finish();
             }
         }
     }
@@ -205,57 +187,21 @@ public class CreatePostActivity extends AppCompatActivity{
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == CAMERA_REQUEST_CODE && resultCode == RESULT_OK) {
-            Bitmap photo = (Bitmap) data.getExtras().get("data");
-            binding.recyclerView.setAdapter(null);
-            uploadBitmap(photo);
+        if (requestCode == CAMERA_REQUEST_CODE && resultCode == RESULT_OK && data != null) {
+            String imageUriString = data.getStringExtra("image_uri");
+            if (imageUriString != null) {
+                Uri imageUri = Uri.parse(imageUriString);
+                uploadImageToStorage(imageUri);
+            }
         }
 
         if (requestCode == PICK_IMAGE && resultCode == RESULT_OK) {
+            if (data.getClipData() != null) {
+                int countClipData = data.getClipData().getItemCount();
+                int currentImageSelect = 0;
 
-                if (data.getClipData() != null) {
-
-                    int countClipData = data.getClipData().getItemCount();
-                    int currentImageSlect = 0;
-
-                    while (currentImageSlect < countClipData) {
-                        ImageUri = data.getClipData().getItemAt(currentImageSlect).getUri();
-                        binding.recyclerView.setAdapter(null);
-                        showProgressDialog();
-                        FireStoreUploader.uploadImages(ImageUri, CreatePostActivity.this, new OnFileUploadListeners() {
-                            @Override
-                            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                                Task<Uri> task = taskSnapshot.getMetadata().getReference().getDownloadUrl();
-                                task.addOnSuccessListener(new OnSuccessListener<Uri>() {
-                                    @Override
-                                    public void onSuccess(Uri uri) {
-                                        try {
-                                            urlList.add(uri.toString());
-                                            hideProgressDialog();
-                                            abc();
-                                        } catch (Exception ex ){
-                                            Toast.makeText(getApplicationContext()  , "err" + ex.toString() , Toast.LENGTH_LONG).show();
-                                            hideProgressDialog();
-                                        }
-                                    }
-                                });
-                            }
-
-                            @Override
-                            public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-
-                            }
-
-                            @Override
-                            public void onFailure(String e) {
-                                Toast.makeText(CreatePostActivity.this, e, Toast.LENGTH_SHORT).show();
-                                hideProgressDialog();
-                            }
-                        });
-                        currentImageSlect = currentImageSlect + 1;
-                    }
-                } else {
-                    ImageUri = data.getData();
+                while (currentImageSelect < countClipData) {
+                    ImageUri = data.getClipData().getItemAt(currentImageSelect).getUri();
                     binding.recyclerView.setAdapter(null);
                     showProgressDialog();
                     FireStoreUploader.uploadImages(ImageUri, CreatePostActivity.this, new OnFileUploadListeners() {
@@ -268,9 +214,9 @@ public class CreatePostActivity extends AppCompatActivity{
                                     try {
                                         urlList.add(uri.toString());
                                         hideProgressDialog();
-                                        abc();
-                                    } catch (Exception ex ){
-                                        Toast.makeText(getApplicationContext()  , "err" + ex.toString() , Toast.LENGTH_LONG).show();
+                                        updateRecyclerView();
+                                    } catch (Exception ex) {
+                                        Toast.makeText(getApplicationContext(), "Error: " + ex.toString(), Toast.LENGTH_LONG).show();
                                         hideProgressDialog();
                                     }
                                 }
@@ -278,9 +224,7 @@ public class CreatePostActivity extends AppCompatActivity{
                         }
 
                         @Override
-                        public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-
-                        }
+                        public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {}
 
                         @Override
                         public void onFailure(String e) {
@@ -288,8 +232,76 @@ public class CreatePostActivity extends AppCompatActivity{
                             hideProgressDialog();
                         }
                     });
+                    currentImageSelect = currentImageSelect + 1;
                 }
+            } else {
+                ImageUri = data.getData();
+                binding.recyclerView.setAdapter(null);
+                showProgressDialog();
+                FireStoreUploader.uploadImages(ImageUri, CreatePostActivity.this, new OnFileUploadListeners() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        Task<Uri> task = taskSnapshot.getMetadata().getReference().getDownloadUrl();
+                        task.addOnSuccessListener(new OnSuccessListener<Uri>() {
+                            @Override
+                            public void onSuccess(Uri uri) {
+                                try {
+                                    urlList.add(uri.toString());
+                                    hideProgressDialog();
+                                    updateRecyclerView();
+                                } catch (Exception ex) {
+                                    Toast.makeText(getApplicationContext(), "Error: " + ex.toString(), Toast.LENGTH_LONG).show();
+                                    hideProgressDialog();
+                                }
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {}
+
+                    @Override
+                    public void onFailure(String e) {
+                        Toast.makeText(CreatePostActivity.this, e, Toast.LENGTH_SHORT).show();
+                        hideProgressDialog();
+                    }
+                });
+            }
         }
+    }
+
+    private void uploadImageToStorage(Uri imageUri) {
+        showProgressDialog();
+        FireStoreUploader.uploadImages(imageUri, this, new OnFileUploadListeners() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                Task<Uri> task = taskSnapshot.getMetadata().getReference().getDownloadUrl();
+                task.addOnSuccessListener(uri -> {
+                    try {
+                        urlList.add(uri.toString());
+                        hideProgressDialog();
+                        updateRecyclerView();
+                    } catch (Exception ex) {
+                        Toast.makeText(getApplicationContext(), "Error: " + ex.toString(), Toast.LENGTH_LONG).show();
+                        hideProgressDialog();
+                    }
+                });
+            }
+
+            @Override
+            public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {}
+
+            @Override
+            public void onFailure(String e) {
+                Toast.makeText(CreatePostActivity.this, e, Toast.LENGTH_SHORT).show();
+                hideProgressDialog();
+            }
+        });
+    }
+
+    private void updateRecyclerView() {
+        ItemListAdapter imageAdapter = new ItemListAdapter(CreatePostActivity.this, urlList);
+        binding.recyclerView.setAdapter(imageAdapter);
     }
 
     public void showProgressDialog() {
@@ -308,44 +320,11 @@ public class CreatePostActivity extends AppCompatActivity{
         }
     }
 
-    private void uploadBitmap(Bitmap bitmap) {
-        showProgressDialog();
-        byte[] data;
-        ByteArrayOutputStream boas = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, boas);
-        data = boas.toByteArray();
-
-        final StorageReference fileref = mStorageRef.child(System.currentTimeMillis()+"");
-        UploadTask uploadTask = fileref.putBytes(data);
-        uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Task<Uri> task = taskSnapshot.getMetadata().getReference().getDownloadUrl();
-                task.addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        urlList.add(uri.toString());
-                        hideProgressDialog();
-                        abc();
-                    }
-                });
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
-                hideProgressDialog();
-            }
-        }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-                double progress = (100.0 * taskSnapshot.getBytesTransferred() / taskSnapshot.getTotalByteCount());
-            }
-        });
+    public static List<String> getUrlList() {
+        return urlList;
     }
 
-    public void abc(){
-        ItemListAdapter imageAdapter = new ItemListAdapter(CreatePostActivity.this, urlList);
-        binding.recyclerView.setAdapter(imageAdapter);
+    public static void setUrlList(List<String> urlList) {
+        CreatePostActivity.urlList = urlList;
     }
 }

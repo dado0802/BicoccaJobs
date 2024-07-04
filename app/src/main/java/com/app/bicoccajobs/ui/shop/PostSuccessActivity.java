@@ -20,7 +20,10 @@ public class PostSuccessActivity extends AppCompatActivity {
         binding = ActivityPostSuccessBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        model = CreatePostActivity.model;
+        Intent intent = getIntent();
+        if (intent != null) {
+            model = (PostModelClass) intent.getSerializableExtra("model");
+        }
 
         binding.btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
