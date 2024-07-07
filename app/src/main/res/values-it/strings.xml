@@ -91,4 +91,7 @@
     <string name="welcome">BENVENUTI IN</string>
     <string name="yes">Si</string>
 
+    <string name = "error_camera">Errore di avvio fotocamera</string>
+    <string name = "photo_fail">Errore di acquisizione foto: </string>
+
 </resources>

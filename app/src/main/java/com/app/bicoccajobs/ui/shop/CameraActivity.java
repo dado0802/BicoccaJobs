@@ -46,7 +46,7 @@ public class CameraActivity extends AppCompatActivity {
                 ProcessCameraProvider cameraProvider = cameraProviderFuture.get();
                 bindPreview(cameraProvider, previewView, captureButton);
             } catch (ExecutionException | InterruptedException e) {
-                Log.e("CameraXApp", "Error starting camera", e);
+                Log.e("CameraXApp", getString(R.string.error_camera), e);
             }
         }, ContextCompat.getMainExecutor(this));
     }
@@ -87,8 +87,8 @@ public class CameraActivity extends AppCompatActivity {
 
             @Override
             public void onError(@NonNull ImageCaptureException exception) {
-                Log.e("CameraXApp", "Photo capture failed: " + exception.getMessage(), exception);
-                Toast.makeText(CameraActivity.this, "Photo capture failed", Toast.LENGTH_SHORT).show();
+                Log.e("CameraXApp", getString(R.string.photo_fail) + exception.getMessage(), exception);
+                Toast.makeText(CameraActivity.this, getString(R.string.photo_fail), Toast.LENGTH_SHORT).show();
             }
         });
     }

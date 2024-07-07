@@ -90,4 +90,7 @@
     <string name="welcome">WELCOME TO</string>
     <string name="yes">Yes</string>
 
+    <string name = "error_camera">Error starting camera</string>
+    <string name = "photo_fail">Photo capture failed: </string>
+
 </resources>

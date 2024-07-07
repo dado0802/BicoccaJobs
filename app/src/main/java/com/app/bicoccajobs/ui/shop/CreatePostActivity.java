@@ -89,7 +89,7 @@ public class CreatePostActivity extends AppCompatActivity {
 
         binding.layoutSelectPic.setOnClickListener(v -> {
             CharSequence arr[] = new CharSequence[]{
-                    "TAKE A PHOTO",
+                    getString(R.string.add_photo),
                     getString(R.string.library),
                     getString(R.string.cancel)
             };
