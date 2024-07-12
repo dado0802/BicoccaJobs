@@ -111,7 +111,7 @@ public class AuthenticationActivity extends BaseActivity {
                 if (task.isSuccessful()) {
                     String userId = firebaseUser.getUid();
 
-                    if(SelectionActivity.key.equals(R.string.shop)){
+                    if(SelectionActivity.key.equals("Shop")){
 
                         ShopModelCLass model = new ShopModelCLass(userId,"","",email,"","",password,SelectionActivity.key,false);
                         DatabaseUploader.setShopRecord(model, new OnTaskListeners() {
@@ -126,7 +126,7 @@ public class AuthenticationActivity extends BaseActivity {
                                 Toast.makeText(getApplicationContext(),e, Toast.LENGTH_LONG).show();
                             }
                         });
-                    }else if(SelectionActivity.key.equals(R.string.students)){
+                    }else if(SelectionActivity.key.equals("Student")){
                         StudentModelCLass model = new StudentModelCLass(userId,"","",email,"","",password,SelectionActivity.key,false);
                         DatabaseUploader.setStudentRecord(model, new OnTaskListeners() {
                             @Override
